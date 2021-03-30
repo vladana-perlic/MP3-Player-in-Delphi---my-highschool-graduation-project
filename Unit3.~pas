@@ -1,0 +1,51 @@
+unit Unit3;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ShellAPI, ExtCtrls, jpeg;
+
+type
+  TForm3 = class(TForm)
+    StaticText1: TStaticText;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Image1: TImage;
+    procedure Label7MouseEnter(Sender: TObject);
+    procedure Label7MouseLeave(Sender: TObject);
+    procedure Label7Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+uses unit2;
+
+{$R *.dfm}
+
+procedure TForm3.Label7MouseEnter(Sender: TObject);
+begin
+ label7.Font.Color:=clred;
+end;
+
+procedure TForm3.Label7MouseLeave(Sender: TObject);
+begin
+  label7.Font.Color:=clblue;
+end;
+
+procedure TForm3.Label7Click(Sender: TObject);
+begin
+ ShellExecute(handle,'open','www.planet-source-code.com',nil,nil,SW_SHOWNORMAL);
+end;
+
+end.
